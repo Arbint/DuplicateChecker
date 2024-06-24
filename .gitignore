@@ -1,0 +1,7 @@
+assets/
+__pycache__/
+build/
+dist/
+venv/
+*.spec
+
