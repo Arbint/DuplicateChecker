@@ -22,7 +22,6 @@ class EntryWidget(QWidget):
     def GoToLinkBtnClicked(self):
         webbrowser.open(self.entry)
 
-
 class DulicateCheckApp(QWidget):
     def __init__(self):
         super().__init__()
@@ -88,7 +87,8 @@ class DulicateCheckApp(QWidget):
             return
 
         for dup, count in dupRec.items():
-            info = f"---------------------------------------------------------------------------\n{dup}\nRepeated: {count} times!\n---------------------------------------------------------------------------"
+            entryNumbers = [index + 1 for index, value in enumerate(self.checker.GetEntries()) if value == dup] 
+            info = f"---------------------------------------------------------------------------\n{dup}\nRepeated: {count} times at locations {entryNumbers}\n---------------------------------------------------------------------------"
             self.dupList.addItem(info)
 
 
