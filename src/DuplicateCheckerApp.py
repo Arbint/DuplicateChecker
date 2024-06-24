@@ -63,7 +63,7 @@ class DulicateCheckApp(QWidget):
     def CheckBtnClicked(self):
         self.dupList.clear()
         text = self.importText.toPlainText()
-        self.checker.SetEntries(text, ',')
+        self.checker.SetEntries(text)
 
         self.UpdateEntryList()
         self.UpdateDupList()

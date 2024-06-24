@@ -1,13 +1,19 @@
 
 class DuplicateChecker():
     def __init__(self):
-        self.entries=[]
+        self.entries = []
 
-    def SetEntries(self, entriesStr: str, sperator: str):
+    def SetEntries(self, entriesStr: str):
+        self.entries = []
         entriesStr = entriesStr.replace("\n","")
-        self.entries = entriesStr.split(sperator)
-        self.entries = [element for element in self.entries if element != ""]
-
+        sperator = "http"
+        for url in entriesStr.split(sperator):
+            if url == "":
+                continue
+            url = url.replace(",","")
+            url = sperator + url
+            self.entries.append(url)             
+        
     def GetEntries(self):
         return self.entries
 
