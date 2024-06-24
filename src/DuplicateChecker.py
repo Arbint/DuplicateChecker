@@ -4,9 +4,11 @@ class DuplicateChecker():
         self.entries=[]
 
     def SetEntries(self, entriesStr: str, sperator: str):
+        entriesStr = entriesStr.replace("\n","")
         self.entries = entriesStr.split(sperator)
+        self.entries = [element for element in self.entries if element != ""]
 
-    def getEntries(self):
+    def GetEntries(self):
         return self.entries
 
     def FindDuplicates(self):
