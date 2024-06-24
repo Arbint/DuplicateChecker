@@ -11,12 +11,13 @@ class EntryWidget(QWidget):
         masterLayout = QHBoxLayout()
         self.setLayout(masterLayout)
         numberLabel = QLabel(str(entryNumber))
-        numberLabel.setFixedWidth(10)
+        numberLabel.setFixedWidth(20)
         masterLayout.addWidget(numberLabel)
 
         goToLinkBtn = QPushButton(f"{entry}")
         masterLayout.addWidget(goToLinkBtn)
         goToLinkBtn.clicked.connect(self.GoToLinkBtnClicked)
+        goToLinkBtn.setStyleSheet('text-align: left;')
 
     def GoToLinkBtnClicked(self):
         webbrowser.open(self.entry)
